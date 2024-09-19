@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二年级英文单词学习工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>英语单词学习</h1>
+            <div>
+                <button id="themeToggle">切换主题</button>
+                <button id="soundToggle">音效：开</button>
+                <button id="loadSavedList">加载单词列表</button> 
+            </div>
+        </header>
+
+        <main>
+            <!-- 单词输入区域 -->
+            <section id="wordInputSection">
+                <h2>输入单词表（格式：英文=中文）</h2>
+                <textarea id="wordInput" placeholder="例如：apple=苹果"></textarea>
+                <div class="buttons">
+                    <button id="startGame">开始游戏</button>
+                    <!-- 移除以下无效按钮 -->
+                    <!-- <button id="loadSavedList">加载单词列表</button> -->
+                </div>
+            </section>
+
+            <!-- 游戏区域 -->
+            <section id="gameSection" style="display: none;">
+                <h2>拖拽匹配游戏</h2>
+                <div id="score">得分：0 / 0</div>
+                <div id="gameArea">
+                    <div id="words" class="container"></div>
+                    <svg id="svgCanvas"></svg> <!-- 用于绘制连线 -->
+                    <div id="images" class="container"></div>
+                </div>
+                <div class="buttons">
+                    <button id="nextPage">下一页</button>
+                    <button id="shuffleGame">打乱顺序</button>
+                </div>
+            </section>
+
+            <!-- 奖励区域 -->
+            <section id="rewardSection" style="display: none;">
+                <h2>恭喜你！</h2>
+                <p>你获得了<span id="stars">★★★</span>星评价！</p>
+                <div class="buttons">
+                    <button id="nextSet">下一组</button>
+                    <button id="finishGame" style="display: none;">完成</button>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
